@@ -22,8 +22,8 @@ var commentRoutes    = require("./routes/comments"),
     
 // assign mongoose promise library and connect to database
 mongoose.Promise = global.Promise;
-mongoose.set('bufferCommands', false);
-const databaseUri = 'mongodb+srv://danish:jRRyezykn9p1zYwo@conf-mate.shxow.mongodb.net/blogsite?retryWrites=true&w=majority';
+
+const databaseUri = 'mongodb+srv://danish:jRRyezykn9p1zYwo@conf-mate.shxow.mongodb.net/blogsite?retryWrites=true&w=majority'
 
 mongoose.connect(databaseUri, { useNewUrlParser: true , useUnifiedTopology: true})
       .then(() => console.log(`Database connected`))
@@ -64,6 +64,6 @@ app.use("/", indexRoutes);
 app.use("/blog", blogRoutes);
 app.use("/blog/:id/comments", commentRoutes);
 
-app.listen(process.env.PORT, function(){
+app.listen(3000, function(){
    console.log("The Server Has Started!");
 });
