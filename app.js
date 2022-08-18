@@ -9,7 +9,7 @@ var express     = require("express"),
     blog  = require("./models/blog"),
     Comment     = require("./models/comment"),
     User        = require("./models/user"),
-    session = require("express-session"),
+    session = require("cookie-session"),
     seedDB      = require("./seeds"),
     methodOverride = require("method-override");
 // configure dotenv
