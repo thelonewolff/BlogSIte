@@ -23,12 +23,12 @@ var commentRoutes    = require("./routes/comments"),
 // assign mongoose promise library and connect to database
 mongoose.Promise = global.Promise;
 
-const databaseUri = 'mongodb+srv://thealpheonix:theghostoftheuchiha@conf-mate.shxow.mongodb.net/blogsite?retryWrites=true&w=majority'
+// const databaseUri = 'mongodb+srv://thealpheonix:theghostoftheuchiha@conf-mate.shxow.mongodb.net/blogsite?retryWrites=true&w=majority'
 
-mongoose.connect(databaseUri, { useNewUrlParser: true , useUnifiedTopology: true})
-      .then(() => console.log(`Database connected`))
-      .catch(err => console.log(`Database connection error: ${err.message}`));
-
+// mongoose.connect(databaseUri, { useNewUrlParser: true , useUnifiedTopology: true})
+//       .then(() => console.log(`Database connected`))
+//       .catch(err => console.log(`Database connection error: ${err.message}`));
+mongoose.connect("mongodb+srv://danish:jRRyezykn9p1zYwo@conf-mate.shxow.mongodb.net/blogsite?retryWrites=true&w=majority",{ useFindAndModify: false, useNewUrlParser: true ,useUnifiedTopology: true });
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
