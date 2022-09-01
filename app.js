@@ -39,7 +39,7 @@ app.locals.moment = require('moment');
 // seedDB(); //seed the database
 
 // PASSPORT CONFIGURATION
-app.use(require("express-session")({
+app.use(require("cookie-session")({
     secret: "Welcome to blogsite",
     resave: false,
     saveUninitialized: false
