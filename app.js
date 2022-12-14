@@ -21,14 +21,21 @@ var commentRoutes    = require("./routes/comments"),
     indexRoutes      = require("./routes/index")
     
 // assign mongoose promise library and connect to database
-mongoose.Promise = global.Promise;
+// mongoose.Promise = global.Promise;
 
 // const databaseUri = 'mongodb+srv://thealpheonix:theghostoftheuchihamadarauchiha@conf-mate.shxow.mongodb.net/blogsite?retryWrites=true&w=majority'
 
 // mongoose.connect(databaseUri, { useNewUrlParser: true , useUnifiedTopology: true})
 //       .then(() => console.log(`Database connected`))
 //       .catch(err => console.log(`Database connection error: ${err.message}`));
-mongoose.connect("mongodb+srv://danish:jRRyezykn9p1zYwo@conf-mate.shxow.mongodb.net/blogsite?retryWrites=true&w=majority",{ useFindAndModify: false, useNewUrlParser: true ,useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://danish:jRRyezykn9p1zYwo@conf-mate.shxow.mongodb.net/blogsite?retryWrites=true&w=majority",{ useFindAndModify: false, useNewUrlParser: true ,useUnifiedTopology: true },function(err){
+    if(err){
+        console.log(err)
+    }
+    else{
+    console.log("Successfully Connected to the Database")
+    }
+});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
