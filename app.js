@@ -28,7 +28,7 @@ var commentRoutes    = require("./routes/comments"),
 // mongoose.connect(databaseUri, { useNewUrlParser: true , useUnifiedTopology: true})
 //       .then(() => console.log(`Database connected`))
 //       .catch(err => console.log(`Database connection error: ${err.message}`));
-mongoose.connect("mongodb+srv://danish:jRRyezykn9p1zYwo@conf-mate.shxow.mongodb.net/blogsite?retryWrites=true&w=majority",function(err){
+mongoose.connect("mongodb+srv://danish:thelonewolf@conf-mate.shxow.mongodb.net/blogsite?retryWrites=true&w=majority",function(err){
     if(err){
         console.log(err)
     }
